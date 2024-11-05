@@ -104,6 +104,8 @@
     <Compile Include="DataBase\ClienteDB.cs" />
     <Compile Include="DataBase\ConexionDB.cs" />
     <Compile Include="DataBase\EmpleadoDB.cs" />
+    <Compile Include="DataBase\TransaccionDB.cs" />
+    <Compile Include="DataBase\UsuarioDB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
