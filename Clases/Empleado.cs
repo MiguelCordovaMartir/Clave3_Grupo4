@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clave3_Grupo4.Clases
 {
-    class Empleado
+    public class Empleado
     {
         public int IdEmpleado { get; set; }
         public string Nombre { get; set; }
