@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Clave3_Grupo4.DataBase; // Asegúrate de que está correctamente dirigido a la carpeta DataBase.
+using Clave3_Grupo4.DataBase; 
 using Clave3_Grupo4.Clases;
 
 namespace Clave3_Grupo4.Interfaces
@@ -31,6 +31,13 @@ namespace Clave3_Grupo4.Interfaces
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGestionClientes_Click(object sender, EventArgs e)
+        {
+            // Abrir el formulario de gestión de clientes
+            ClientesForm clientesForm = new ClientesForm();
+            clientesForm.ShowDialog();
         }
     }
 }
