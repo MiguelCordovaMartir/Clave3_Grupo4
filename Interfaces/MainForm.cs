@@ -39,5 +39,12 @@ namespace Clave3_Grupo4.Interfaces
             ClientesForm clientesForm = new ClientesForm();
             clientesForm.ShowDialog();
         }
+
+        private void btnGestionEmpleados_Click(object sender, EventArgs e)
+        {
+            // Abrir el formulario de gestión de Empleados
+            EmpleadosForm EmpleadosForm = new EmpleadosForm();
+            EmpleadosForm.ShowDialog();
+        }
     }
 }
