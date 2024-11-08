@@ -42,6 +42,7 @@ namespace Clave3_Grupo4.Interfaces
             this.btnGestionClientes.TabIndex = 0;
             this.btnGestionClientes.Text = "Gestion de clientes";
             this.btnGestionClientes.UseVisualStyleBackColor = true;
+            this.btnGestionClientes.Click += new System.EventHandler(this.btnGestionClientes_Click);
             // 
             // btnGestionEmpleados
             // 
