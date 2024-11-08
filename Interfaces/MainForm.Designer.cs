@@ -52,6 +52,7 @@ namespace Clave3_Grupo4.Interfaces
             this.btnGestionEmpleados.TabIndex = 1;
             this.btnGestionEmpleados.Text = "Gestion empleados";
             this.btnGestionEmpleados.UseVisualStyleBackColor = true;
+            this.btnGestionEmpleados.Click += new System.EventHandler(this.btnGestionEmpleados_Click);
             // 
             // btnGestionTransacciones
             // 
