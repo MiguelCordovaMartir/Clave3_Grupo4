@@ -89,7 +89,7 @@ namespace Clave3_Grupo4.Interfaces
             // 
             // btnAgregarTransaccion
             // 
-            this.btnAgregarTransaccion.Location = new System.Drawing.Point(451, 59);
+            this.btnAgregarTransaccion.Location = new System.Drawing.Point(425, 57);
             this.btnAgregarTransaccion.Name = "btnAgregarTransaccion";
             this.btnAgregarTransaccion.Size = new System.Drawing.Size(115, 23);
             this.btnAgregarTransaccion.TabIndex = 6;
