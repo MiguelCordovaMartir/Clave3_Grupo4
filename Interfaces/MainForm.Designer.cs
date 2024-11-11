@@ -42,6 +42,7 @@ namespace Clave3_Grupo4.Interfaces
             this.btnGestionClientes.TabIndex = 0;
             this.btnGestionClientes.Text = "Gestion de clientes";
             this.btnGestionClientes.UseVisualStyleBackColor = true;
+            this.btnGestionClientes.Click += new System.EventHandler(this.btnGestionClientes_Click);
             // 
             // btnGestionEmpleados
             // 
@@ -51,6 +52,7 @@ namespace Clave3_Grupo4.Interfaces
             this.btnGestionEmpleados.TabIndex = 1;
             this.btnGestionEmpleados.Text = "Gestion empleados";
             this.btnGestionEmpleados.UseVisualStyleBackColor = true;
+            this.btnGestionEmpleados.Click += new System.EventHandler(this.btnGestionEmpleados_Click);
             // 
             // btnGestionTransacciones
             // 
@@ -60,6 +62,7 @@ namespace Clave3_Grupo4.Interfaces
             this.btnGestionTransacciones.TabIndex = 2;
             this.btnGestionTransacciones.Text = "Gestion Transacciones";
             this.btnGestionTransacciones.UseVisualStyleBackColor = true;
+            this.btnGestionTransacciones.Click += new System.EventHandler(this.btnGestionTransacciones_Click);
             // 
             // MainForm
             // 

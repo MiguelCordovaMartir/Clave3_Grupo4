@@ -20,6 +20,7 @@ namespace Clave3_Grupo4.Interfaces
         public MainForm()
         {
             InitializeComponent();
+
         }
 
         // Constructor que recibe un objeto Empleado
@@ -31,6 +32,27 @@ namespace Clave3_Grupo4.Interfaces
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGestionClientes_Click(object sender, EventArgs e)
+        {
+            // Abrir el formulario de gestión de clientes
+            ClientesForm clientesForm = new ClientesForm();
+            clientesForm.ShowDialog();
+        }
+
+        private void btnGestionEmpleados_Click(object sender, EventArgs e)
+        {
+            // Abrir el formulario de gestión de Empleados
+            EmpleadosForm EmpleadosForm = new EmpleadosForm();
+            EmpleadosForm.ShowDialog();
+        }
+
+        private void btnGestionTransacciones_Click(object sender, EventArgs e)
+        {
+            // Abrir el formulario de gestión de clientes
+            TransaccionesForm TransaccionesForm = new TransaccionesForm();
+            TransaccionesForm.ShowDialog();
         }
     }
 }

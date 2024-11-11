@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using Clave3_Grupo4.Clases;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
@@ -33,9 +34,7 @@ namespace Clave3_Grupo4.DataBase
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error al insertar empleado" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
+                MessageBox.Show("Error al insertar empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -85,6 +84,31 @@ namespace Clave3_Grupo4.DataBase
             return empleado;
         }
 
+        // Método para obtener todos los empleados de la base de datos
+        public DataTable ObtenerTodosEmpleados()
+        {
+            DataTable dataTable = new DataTable();
+            try
+            {
+                string query = "SELECT * FROM Empleados";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conexionDB.ObtenerConexion()))
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                {
+                    adapter.Fill(dataTable);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener empleados: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexionDB.CerrarConexion();
+            }
+            return dataTable;
+        }
+
         // Método para actualizar un empleado en la base de datos
         public bool ActualizarEmpleado(Empleado empleado)
         {
@@ -106,9 +130,7 @@ namespace Clave3_Grupo4.DataBase
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error al actualizar empleado" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
+                MessageBox.Show("Error al actualizar empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -134,15 +156,43 @@ namespace Clave3_Grupo4.DataBase
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error al eliminar empleado" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
+                MessageBox.Show("Error al eliminar empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
             {
                 conexionDB.CerrarConexion();
             }
+        }
+
+        public DataTable BuscarEmpleados(string criterio)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                string query = "SELECT * FROM Empleados WHERE Nombre LIKE @Criterio OR Apellido LIKE @Criterio";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conexionDB.ObtenerConexion()))
+                {
+                    cmd.Parameters.AddWithValue("@Criterio", "%" + criterio + "%");
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar empleados: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexionDB.CerrarConexion();
+            }
+
+            return dataTable;
         }
     }
 }
