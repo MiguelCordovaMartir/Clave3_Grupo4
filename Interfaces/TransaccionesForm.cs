@@ -99,12 +99,42 @@ namespace Clave3_Grupo4.Interfaces
 
         private bool ValidarCamposTransaccion()
         {
-            if (cmbClientes.SelectedItem == null || cmbTipoTransaccion.SelectedItem == null ||
-                string.IsNullOrWhiteSpace(txtMonto.Text) || !decimal.TryParse(txtMonto.Text, out _))
+            // Verificar si el campo de cliente está seleccionado
+            if (cmbClientes.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor, complete todos los campos obligatorios correctamente.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, seleccione un cliente.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
+            // Verificar si el campo de tipo de transacción está seleccionado
+            if (cmbTipoTransaccion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, seleccione el tipo de transacción.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Verificar si el campo de monto está completo
+            if (string.IsNullOrWhiteSpace(txtMonto.Text))
+            {
+                MessageBox.Show("Por favor, ingrese el monto de la transacción.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Validar que el monto es un número decimal
+            if (!decimal.TryParse(txtMonto.Text, out decimal monto) || monto <= 0)
+            {
+                MessageBox.Show("Por favor, ingrese un monto válido (mayor que cero).", "Monto Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Verificar si el campo de descripción está completo
+            if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+            {
+                MessageBox.Show("Por favor, ingrese una descripción para la transacción.", "Campo Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Si todas las validaciones pasan, retornar true
             return true;
         }
 
