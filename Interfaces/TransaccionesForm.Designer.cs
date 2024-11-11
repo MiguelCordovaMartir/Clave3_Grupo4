@@ -89,7 +89,7 @@ namespace Clave3_Grupo4.Interfaces
             // 
             // btnAgregarTransaccion
             // 
-            this.btnAgregarTransaccion.Location = new System.Drawing.Point(465, 59);
+            this.btnAgregarTransaccion.Location = new System.Drawing.Point(451, 59);
             this.btnAgregarTransaccion.Name = "btnAgregarTransaccion";
             this.btnAgregarTransaccion.Size = new System.Drawing.Size(115, 23);
             this.btnAgregarTransaccion.TabIndex = 6;
@@ -99,7 +99,7 @@ namespace Clave3_Grupo4.Interfaces
             // 
             // btnVerHistorial
             // 
-            this.btnVerHistorial.Location = new System.Drawing.Point(465, 93);
+            this.btnVerHistorial.Location = new System.Drawing.Point(465, 121);
             this.btnVerHistorial.Name = "btnVerHistorial";
             this.btnVerHistorial.Size = new System.Drawing.Size(75, 23);
             this.btnVerHistorial.TabIndex = 7;
